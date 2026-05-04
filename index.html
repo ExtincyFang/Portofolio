@@ -293,6 +293,8 @@
       border-radius: 10px;
       font-weight: bold;
       color: #111827;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     footer {
@@ -304,19 +306,31 @@
     }
 
     @media (max-width: 768px) {
+      .container {
+        width: 92%;
+      }
+
       .nav-content {
-        padding: 15px 0;
+        min-height: auto;
+        padding: 14px 0;
         flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 22px;
       }
 
       .nav-links {
+        width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 8px 14px;
+        font-size: 14px;
       }
 
       .hero {
-        padding: 60px 0;
+        padding: 52px 0;
       }
 
       .hero-grid,
@@ -327,15 +341,71 @@
       }
 
       .hero h1 {
-        font-size: 33px;
+        font-size: 32px;
       }
 
       .hero h2 {
         font-size: 18px;
       }
 
+      .hero p,
+      .card p,
+      .list,
+      .contact-box p {
+        font-size: 15px;
+      }
+
       section {
-        padding: 54px 0;
+        padding: 48px 0;
+      }
+
+      .section-title h2 {
+        font-size: 27px;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 13px;
+      }
+
+      .contact-box {
+        width: 100%;
+        text-align: left;
+      }
+
+      .contact-list {
+        width: 100%;
+      }
+
+      .contact-item {
+        font-size: 15px;
+        padding: 12px;
+        text-align: left;
+      }
+
+      footer {
+        padding: 20px 14px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-links {
+        font-size: 13px;
+        gap: 7px 11px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .skill-tags span,
+      .project-tech span {
+        font-size: 12px;
+      }
+
+      .contact-item {
+        font-size: 14px;
       }
     }
   </style></head><body>
@@ -419,7 +489,7 @@
       <div class="skill-tags">
         <span>HTML</span>
         <span>CSS</span>
-        <span>Basic JavaScript</span>
+        <span>JavaScript</span>
         <span>PHP</span>
         <span>Database</span>
         <span>Bootstrap</span>
@@ -529,4 +599,4 @@
     <p>&copy; 2026 Fathur Rahman Al Ghifari. All Rights Reserved.</p>
   </footer>
 </body>
-  </html>
+</html>
