@@ -1,0 +1,548 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio | Fathur Rahman Al Ghifari</title>  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    nav {
+      background: #0f172a;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-content {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 90px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+      padding: 8px 14px;
+      border: 1px solid rgba(125, 211, 252, 0.4);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      font-weight: normal;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #dbeafe;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-secondary {
+      border: 1px solid #93c5fd;
+      color: white;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 14px;
+      color: #7dd3fc;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      margin-bottom: 10px;
+      color: #e0f2fe;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .about-list {
+      margin-top: 14px;
+      padding-left: 20px;
+    }
+
+    .about-list li {
+      margin-bottom: 8px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .skill-tags span {
+      background: #e0f2fe;
+      color: #075985;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      border-left: 4px solid #38bdf8;
+      padding-left: 18px;
+    }
+
+    .timeline-item h3 {
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item .meta {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item ul {
+      padding-left: 18px;
+    }
+
+    .timeline-item li {
+      margin-bottom: 8px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .project-card h3 {
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #475569;
+      margin-bottom: 14px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .project-tech span {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .project-link {
+      display: inline-block;
+      background: #0f172a;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .project-link:hover {
+      background: #1e3a8a;
+    }
+
+    .contact-box {
+      max-width: 720px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-list {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-content {
+        height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .skills-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero h2 {
+        font-size: 19px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style></head><body>
+  <nav>
+    <div class="container nav-content">
+      <a href="#home" class="logo">Fathur<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#experience">PKL</a>
+        <a href="#projects">Project</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </div>
+  </nav>  <header id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Fresh Graduate RPL</span>
+        <h1>Fathur Rahman Al Ghifari</h1>
+        <h2>Web Basic • UI Basic • Perakitan PC</h2>
+        <p>
+          Saya fresh graduate dari SMK Al Amanah jurusan Rekayasa Perangkat Lunak.
+          Saya memiliki minat pada pengembangan web sederhana, tampilan antarmuka dasar,
+          dan teknologi komputer. Fokus saya saat ini adalah memperkuat skill front-end
+          dan pengalaman kerja di bidang IT.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Lihat Project</a>
+          <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+        </div>
+      </div><div class="hero-card">
+    <h3>Ringkasan</h3>
+    <ul>
+      <li>• Fresh graduate SMK Al Amanah</li>
+      <li>• Jurusan Rekayasa Perangkat Lunak</li>
+      <li>• Menguasai HTML, CSS, dan JavaScript basic</li>
+      <li>• Pernah PKL di Institut Teknologi Tangerang Selatan</li>
+      <li>• Siap belajar dan bekerja di lingkungan profesional</li>
+    </ul>
+  </div>
+</div>
+
+  </header>  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tentang Saya</h2>
+        <p>Profil singkat dan fokus pengembangan saya.</p>
+      </div><div class="about-grid">
+    <div class="card">
+      <h3>Profil</h3>
+      <p>
+        Saya memiliki dasar di bidang pengembangan web dan teknologi komputer.
+        Selama belajar di RPL, saya terbiasa membuat struktur halaman web, mengatur
+        tampilan dengan CSS, dan menggunakan JavaScript untuk interaksi sederhana.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Target Karier</h3>
+      <ul class="about-list">
+        <li>Staff IT</li>
+        <li>Junior Web Developer</li>
+        <li>Admin IT</li>
+        <li>Technical Support</li>
+        <li>Staff Operasional berbasis teknologi</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Keahlian</h2>
+        <p>Skill yang relevan dengan CV dan pengalaman saya.</p>
+      </div><div class="skills-grid">
+    <div class="card">
+      <h3>Hard Skill</h3>
+      <div class="skill-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>UI Basic</span>
+        <span>Perakitan PC</span>
+        <span>Microsoft Word</span>
+        <span>Microsoft Excel</span>
+        <span>Pengoperasian Komputer</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Soft Skill</h3>
+      <div class="skill-tags">
+        <span>Komunikasi</span>
+        <span>Kerja Tim</span>
+        <span>Disiplin</span>
+        <span>Bertanggung Jawab</span>
+        <span>Mau Belajar</span>
+        <span>Teliti</span>
+        <span>Mengikuti Arahan</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pengalaman PKL</h2>
+        <p>Pengalaman praktik kerja lapangan yang pernah saya ikuti.</p>
+      </div><div class="card timeline">
+    <div class="timeline-item">
+      <h3>Institut Teknologi Tangerang Selatan</h3>
+      <p class="meta">Peserta Praktik Kerja Lapangan</p>
+      <ul>
+        <li>Mengikuti seminar collaboration OS Ubuntu.</li>
+        <li>Membantu proses perakitan PC.</li>
+        <li>Membantu pengecekan dan persiapan perangkat komputer.</li>
+        <li>Membuat tampilan UI sederhana menggunakan HTML, CSS, dan JavaScript.</li>
+        <li>Membantu kebutuhan teknis sederhana di lingkungan kampus.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Project</h2>
+        <p>Project sederhana yang bisa ditunjukkan ke recruiter.</p>
+      </div><div class="project-grid">
+    <div class="card project-card">
+      <h3>Company Profile Website</h3>
+      <p>
+        Website company profile sederhana dengan bagian About, Clients, Services,
+        Portfolio, dan Contact. Project ini dibuat untuk melatih struktur halaman,
+        layout, slider, gallery, dan form kontak.
+      </p>
+      <div class="project-tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Materialize CSS</span>
+      </div>
+      <a class="project-link" href="https://extincyfang.github.io/CoPr/" target="_blank">Lihat Project</a>
+    </div>
+
+    <div class="card project-card">
+      <h3>Personal Portfolio Website</h3>
+      <p>
+        Website portofolio pribadi untuk menampilkan profil, keahlian, pengalaman PKL,
+        dan project. Website ini dibuat agar informasi diri lebih mudah dilihat oleh
+        perusahaan atau recruiter.
+      </p>
+      <div class="project-tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Responsive Design</span>
+      </div>
+      <a class="project-link" href="#home">Project Ini</a>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Kontak</h2>
+        <p>Hubungi saya melalui kontak berikut.</p>
+      </div><div class="card contact-box">
+    <p>
+      Saya terbuka untuk kesempatan kerja, magang, atau posisi entry-level
+      di bidang IT, web basic, admin IT, dan technical support.
+    </p>
+
+    <div class="contact-list">
+      <div class="contact-item">No. HP: 087899217270</div>
+      <div class="contact-item">Email: faturrahmanal74@gmail.com</div>
+      <div class="contact-item">Sekolah: SMK Al Amanah</div>
+      <div class="contact-item">Jurusan: Rekayasa Perangkat Lunak</div>
+    </div>
+  </div>
+</div>
+
+  </section>  <footer>
+    <p>&copy; 2026 Fathur Rahman Al Ghifari. All Rights Reserved.</p>
+  </footer>
+</body>
+                 </html>
